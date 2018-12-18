@@ -31,6 +31,9 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+cm.updater.uri=https://lineageota.claritysrv.com/api/v1/{device}/{type}/{incr}
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
@@ -117,7 +120,6 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    AudioFX \
     CMSettingsProvider \
     LineageSetupWizard \
     Eleven \
